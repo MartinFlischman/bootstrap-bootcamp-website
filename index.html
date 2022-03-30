@@ -14,6 +14,10 @@
 			rel="stylesheet"
 			href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css"
 		/>
+		<link
+			href="https://api.mapbox.com/mapbox-gl-js/v2.3.1/mapbox-gl.css"
+			rel="stylesheet"
+		/>
 		<link rel="stylesheet" href="style.css" />
 		<title>Front-end Bootcamp</title>
 	</head>
@@ -441,10 +445,47 @@
 			</div>
 		</section>
 
+		<!-- Contact & Map -->
+		<section class="p-5">
+			<div class="container">
+				<div class="row g-4">
+					<div class="col-md">
+						<h2 class="text-center mb-4">Contact Info</h2>
+						<ul class="list-group list-group-flush lead">
+							<li class="list-group-item">
+								<span class="fw-bold">Contact Number:</span> +27 (0)21 000 0000
+							</li>
+							<li class="list-group-item">
+								<span class="fw-bold">Email Address:</span> info@frontendbc.test
+							</li>
+							<li class="list-group-item">
+								<span class="fw-bold">Main Location:</span> Cape Town, South
+								Africa, 8000
+							</li>
+						</ul>
+					</div>
+					<div class="col-md">
+						<div id="map"></div>
+					</div>
+				</div>
+			</div>
+		</section>
+
 		<script
 			src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
 			integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
 			crossorigin="anonymous"
 		></script>
+		<script src="https://api.mapbox.com/mapbox-gl-js/v2.3.1/mapbox-gl.js"></script>
+		<script>
+			mapboxgl.accessToken =
+				"pk.eyJ1IjoibWFydGluZmxpc2NobWFuIiwiYSI6ImNsMWRpMzZ4bzBkb2Ezam1mM2czcnRzeG4ifQ.BuBxwQpJEb5tQd-OCyiYvQ";
+			var map = new mapboxgl.Map({
+				container: "map",
+				style: "mapbox://styles/mapbox/streets-v11",
+				center: [-33.92487, 18.424055],
+				zoom: 18,
+			});
+		</script>
 	</body>
 </html>
